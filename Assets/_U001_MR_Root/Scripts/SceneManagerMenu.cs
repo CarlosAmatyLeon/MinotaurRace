@@ -12,8 +12,9 @@ public class SceneManagerMenu : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.PlayBackgroundLoop(backgroundAudio);
-        mazeSizeText.text = "5";
-        GameManager.Instance.mazeSize = 5;
+        mazeSizeText.text = "7";
+        GameManager.Instance.mazeSize = 7;
+        GameManager.Instance.difficulty = 1;
     }
 
     public void mazeSizeChange(float value)
@@ -22,8 +23,13 @@ public class SceneManagerMenu : MonoBehaviour
         GameManager.Instance.mazeSize = (int)value;
     }
 
+    public void DifficultyChange(int value)
+    {
+        GameManager.Instance.difficulty = value + 1;
+    }
+
     public void onStartGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Maze");
     }
 }

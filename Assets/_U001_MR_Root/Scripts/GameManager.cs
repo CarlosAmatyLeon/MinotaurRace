@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public int mazeSize = 5;
+    public int mazeSize;
+    public int difficulty;
 
     private void Awake()
     {
